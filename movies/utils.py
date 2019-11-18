@@ -16,7 +16,7 @@ from movies.requester import Downloader
 class Commander:
     def __init__(self, ignore_checksum=False):
         self.ignore_checksum = ignore_checksum
-        self.db_api = dbm.DatabaseManager_I()
+        self.db_api = dbm.DatabaseManager()
         self.printer = DataPrinter()
         self.downloader = None
         self.populate_db()
