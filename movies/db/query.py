@@ -19,7 +19,7 @@ COMPARE = {
 
 SORT = {
     "title": ('"TITLE"', '"TITLE"'),
-    "year": ('_str("YEAR")', '_int("YEAR")'),
+    "year": ('_str("YEAR")', '"YEAR"'),
     "runtime": ('tform("RUNTIME")', 'clnstr("RUNTIME")'),
     "genre": ('"GENRE"', '"GENRE"'),
     "director": ('"DIRECTOR"', '"DIRECTOR"'),
@@ -28,16 +28,16 @@ SORT = {
     "language": ('"LANGUAGE"', '"LANGUAGE"'),
     "country": ("COUNTRY", "COUNTRY"),
     "awards": ('_str(awards_won("AWARDS"))', "awards_won(AWARDS)"),
-    "rating": ('_str("IMDb_Rating"', "IMDb_Rating"),
-    "votes": ('int_to_comas("IMDb_votes")', "_int(IMDb_votes)"),
-    "boxoffice": ('int_to_account("BOX_OFFICE")', "_int(BOX_OFFICE)"),
+    "rating": ('_str("IMDb_Rating")', "IMDb_Rating"),
+    "votes": ('int_to_comas("IMDb_votes")', "IMDb_votes"),
+    "boxoffice": ('int_to_account("BOX_OFFICE")', "BOX_OFFICE"),
 }
 
 
 SELECT_CONV = {
-    "year": "str",
+    "year": "_str",
     "runtime": "tform",
-    "imdb_rating": "str",
+    "imdb_rating": "_str",
     "imdb_votes": "int_to_comas",
     "box_office": "int_to_account",
 }
@@ -51,7 +51,7 @@ INSERT_CONV = {
 
 HIGHSCORES = [
     ("tform(RUNTIME)", "clnstr(RUNTIME)"),
-    ("int_to_account(BOX_OFFICE)", "_int(BOX_OFFICE)"),
+    ("int_to_account(BOX_OFFICE)", "BOX_OFFICE"),
     ("_str(awards_won(AWARDS))", "awards_won(AWARDS)"),
     ("_str(nominations(AWARDS))", "nominations(AWARDS)"),
     ("_str(osc_won(AWARDS))", "osc_won(AWARDS)"),

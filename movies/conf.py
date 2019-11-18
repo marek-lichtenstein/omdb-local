@@ -1,4 +1,4 @@
-DB_FP = "files/movies.sqlite"
+DB_FP = "files/copy_movies.sqlite"
 SITE = "http://www.omdbapi.com"
 CREDENTIALS = "files/credentials.json"
 INITIAL_DB_CHECKSUM = "d0d3c849b4de5dc1a76529b563f3f68cff0ef880"
