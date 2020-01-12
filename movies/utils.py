@@ -114,9 +114,6 @@ class Commander:
             return ", ".join(err.args)
 
 
-COLS_RE = re.compile("|".join(DATA_MAP.values()))
-
-
 class DataPrinter:
     def __init__(
         self,
